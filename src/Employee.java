@@ -1,3 +1,6 @@
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Employee {
 
     private String name;
@@ -61,12 +64,15 @@ public class Employee {
         return totalPay;
     }
 
+    public static String formatCash(double dollaDollaBill){
+        NumberFormat n = NumberFormat.getCurrencyInstance(Locale.US);
+        return n.format(dollaDollaBill);
+    }
+
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
+        return"Name='" + name + '\'' +
                 ", ID=" + ID +
-                ", hourlyWage=" + hourlyWage +
-                '}';
+                ", Hourly Wage=" + formatCash(hourlyWage);
     }
 }
