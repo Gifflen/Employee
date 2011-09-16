@@ -1,3 +1,4 @@
+//Author: Bruce Stringer
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -9,7 +10,7 @@ public class Employee {
 
     public Employee() {
         this.name = "Blank";
-        this.ID = 000;
+        this.ID = 0;
         this.hourlyWage= 0;
     }
 
@@ -53,12 +54,12 @@ public class Employee {
 
     public double paycheck(double [] hours) {
         double totalPay = 0;
-        for (int i = 0; i <hours.length;i++){
-            if (hours[i] <= 40){
-                totalPay+=(hours[i]*hourlyWage);
+        for (double werk: hours){
+            if (werk <= 40){
+                totalPay+=(werk*hourlyWage);
             }else{
                 totalPay+=40*hourlyWage;
-                totalPay+=((hours[i]-40)*(hourlyWage*1.5));
+                totalPay+=((werk-40)*(hourlyWage*1.5));
             }
         }
         return totalPay;
