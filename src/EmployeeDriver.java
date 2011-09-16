@@ -1,5 +1,4 @@
-import java.text.NumberFormat;
-import java.util.Locale;
+//Author: Bruce Stringer
 import java.util.Random;
 public class EmployeeDriver {
     public static void main (String [] args){
@@ -28,7 +27,7 @@ public class EmployeeDriver {
             System.out.println(emp.getName() + "'s Yearly Salary is: " + Employee.formatCash(emp.getYearlyWage()));
 
             System.out.println(emp.getName() + "gets a raise of " + raise + " percent");
-            emp.increaseSalary((double) raise);
+            emp.increaseSalary(raise);
             System.out.println(emp.getName()+ "'s mew Yearly Salary is: " +Employee.formatCash(emp.getYearlyWage()));
 
 
