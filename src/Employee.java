@@ -4,6 +4,12 @@ public class Employee {
     private int ID;
     private double hourlyWage;
 
+    public Employee() {
+        this.name = "Blank";
+        this.ID = 000;
+        this.hourlyWage= 0;
+    }
+
     public Employee(String name, int ID, double hourlyWage) {
         this.name = name;
         this.ID = ID;
@@ -39,7 +45,7 @@ public class Employee {
     }
 
     public void increaseSalary(double percentIncrease){
-
+        setHourlyWage(getHourlyWage()*(1+ percentIncrease/100));
     }
 
     public double paycheck(double [] hours) {
@@ -53,5 +59,14 @@ public class Employee {
             }
         }
         return totalPay;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", ID=" + ID +
+                ", hourlyWage=" + hourlyWage +
+                '}';
     }
 }
